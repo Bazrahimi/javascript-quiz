@@ -83,7 +83,18 @@ function showQuestion() {
 }
 
 //function to handle a choice selection 
-function handleChoice(even) {
-  const selectedChoiceIndex = question.
+function handleChoice(event) {
+  const selectedChoiceIndex = parseInt(event.target.getAttribute('data-index'));
+
+  if (selectedChoiceIndex === questions.answer) {
+    feedbackEl.textContent = "Correct!";
+  } else {
+    feedbackEl.textContent = 'Wrong!';
+    time -= 10;
+    if (time < 0) {
+      time=0;
+    }
+    timerEl.textContent = 'Time: ' + time;
+  }
 }
 
