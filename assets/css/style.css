@@ -38,23 +38,72 @@ choices {
 
 }
 
+h1 {
+  margin-bottom: 30px;
+  line-height: 1.8;
+}
+
 button {
+  display: inline-block;
   padding: 10px 20px;
-  background-color: #4CAF50;
-  color: #fff;
-  border: none;
+  color: black;
   cursor: pointer;
+  margin-left: 50px;
+  width: 80%;
+  text-align: left;
+}
+
+#start-button {
+text-align: center;
+background-color: green;
+font-size: x-large;
+font-weight: bolder;
+border-radius: 50px;
+border: none;
+width: 40%;
+
 }
 
 input[type="text"] {
   padding: 10px;
+
 }
 
 #feedback {
   margin-top: 10px;
+  text-align: center;
+  margin: 30px;
+
+  font-size: 30px;
+  font-weight: bold;
 }
+
+.correct-feedback {
+  background-color: green;
+  padding: 10px;
+  border-radius: 10px;
+  transform: scale(1.2);
+}
+
+.incorrect-feedback {
+  background-color: red;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+#initials {
+margin-left: 10%;
+display: none;
+}
+
+
+
 
 #submit-button {
   display: none;
+}
+
+.submit {
+  display: block;
 }
 
