@@ -92,7 +92,6 @@ input[type="text"] {
 }
 
 #initials {
-margin-left: 10%;
 display: none;
 }
 
@@ -105,5 +104,12 @@ display: none;
 
 .submit {
   display: block;
+  background-color: green;
+  width: 40%;
+  text-align: center;
+  font-size: 25px;
+  margin: 10px;
+  border-radius: 10px;
 }
+
 

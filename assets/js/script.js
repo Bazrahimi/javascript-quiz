@@ -8,6 +8,8 @@ const initialsInput = document.getElementById('initials');
 const scoreEl = document.getElementById('scores');
 const submitBtn = document.getElementById('submit-button');
 
+
+
 //Quiz Variables 
 let currentQuestionIndex = 0;
 let time = 40;
@@ -87,7 +89,7 @@ function showQuestion() {
   }
 }
 
-//function to handle a user-choice selection 
+//function to handle a user quiz attempt
 // ...
 
 function handleChoice(event) {
@@ -126,26 +128,81 @@ function handleChoice(event) {
   }
 }
 
-// Function to end the quiz
+
+//function to update the scores
+//plase consider to delete this
+function upddateScore() {
+  scoreEl.textContent = `Total Score:      ${scores}%`;
+}
+
+//funtion to save scores and initials
+function saveScore() {
+  const initials = initialsInput.value.trim();
+  const scoreData = {
+    initials: initials,
+    score: scores
+  };
+    //safe new scores localStorage
+  let scoresArray = JSON.parse(localStorage.getItem('scores')) || [];
+  scoresArray.push(scoreData);
+  localStorage.setItem('scores', JSON.stringify(scoresArray));
+}
+
 function endQuiz() {
   clearInterval(timeInterval);
   timerEl.textContent = 'Time: ' + time;
 
-  //
+  //Hide start button, Question, multiple choice and feedback to multiple choices.
+  startBtn.style.display = 'none';
+  questionEl.style.display = 'none';
+  choicesEl.style.display = 'none';
+  feedbackEl.style.display = 'none';
 
-  submitBtn.classList.add('.submit');
-  submitBtn.classList.remove('#submit-button');
+  //Display initials input and submit button
+  initialsInput.style.display = 'block';
+  submitBtn.style.display = 'block';
+  submitBtn.classList.add('submit');
 
+  //create two parapgraphs page
+  const p1 = document.createElement('p');
+  p1.textContent = 'All Done!';
+  p1.style.fontSize = '25px';
 
+  const p2 = document.createElement('p');
+  p2.textContent = `Your final score is ${scores}%.`;
+  p2.style.marginTop= '10px';
+  p2.style.marginBottom= '10px';
 
-  // Add your logic for ending the quiz and displaying the score input form here
-}
-//function to update the scores
-function upddateScore() {
-  scoreEl.textContent = `Total Score:      ${scores}%`;
-}
+  initialsInput.insertAdjacentElement("beforebegin", p2);
+  p2.insertAdjacentElement("beforebegin", p1);
   
 
 
 
 
+
+
+  // Add add event listener for submit
+  submitBtn.addEventListener('click', function () {
+    saveScore();
+    //show a message to indicate successful submission.
+  });
+
+}
+
+function upddateScore() {
+  scoreEl.textContent = `Total Score: ${scores}%`;
+}
+  
+window.addEventListener('load', function() {
+  let scoresArray = JSON.parse(this.localStorage.getItem('scores')) || [];
+  //sort the scores
+  scoresArray.sort((a, b) => b.score - a.score);
+  //Display scores in the scoreEl 
+  scoresArray.forEach(scoreData => {
+    const scoreItem = document.createElement('div');
+    scoreItem.textContent = `${scoreData.initials}: ${scoreData.score}%`;
+    scoreEl.appendChild(scoreItem);
+
+  });
+});
