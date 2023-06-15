@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scores</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      margin-left: 50px;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    ol {
+      list-style-type: decimal;
+      padding-left: 20px;
+      margin-left: 70px;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+    
+    button {
+      background-color: green;
+      color: white;
+      font-size: 20px;
+      border-radius: 10px;
+      border: none;
+      margin: 20px;
+      margin-left: 0px;
+      padding: 10px;
+    
+    }
+    
+  </style>
+</head>
+<body>
+  <h1>Scores</h1>
+  <h3>score are sorted from highest </h3>
+  <ol id="score-list"></ol>
+  <button><a href="../index.html">Go back</a></button>
+  <button>Clear Scores</button>
+
+  <script>
+    window.addEventListener('load', function() {
+      let scoresArray = JSON.parse(localStorage.getItem('scores')) || [];
+      // Sort the scores
+      scoresArray.sort((a, b) => b.score - a.score);
+
+      const scoreList = document.getElementById('score-list');
+      // Display scores in the scoreList
+      scoresArray.forEach(scoreData => {
+        const scoreItem = document.createElement('li');
+        scoreItem.textContent = `${scoreData.initials}: ${scoreData.score}%`;
+        scoreList.appendChild(scoreItem);
+      });
+
+      
+    });
+  </script>
+</body>
+</html>

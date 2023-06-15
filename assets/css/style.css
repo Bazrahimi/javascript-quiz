@@ -82,14 +82,18 @@ input[type="text"] {
   background-color: green;
   padding: 10px;
   border-radius: 10px;
-  transform: scale(1.2);
 }
+
+
+
 
 .incorrect-feedback {
   background-color: red;
   padding: 10px;
   border-radius: 10px;
 }
+
+
 
 #initials {
 display: none;
