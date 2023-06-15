@@ -69,7 +69,7 @@ function startTimer() {
   }, 1000);
 }
 
-//function to display a question
+//function to display questions
 function showQuestion() {
   const question = questions[currentQuestionIndex];
   questionEl.textContent = question.question;
@@ -87,7 +87,7 @@ function showQuestion() {
   }
 }
 
-//function to handle a choice selection 
+//function to handle a user-choice selection 
 // ...
 
 function handleChoice(event) {
@@ -126,14 +126,16 @@ function handleChoice(event) {
   }
 }
 
-
-// ...
-
-
 // Function to end the quiz
 function endQuiz() {
   clearInterval(timeInterval);
   timerEl.textContent = 'Time: ' + time;
+
+  //
+
+  submitBtn.classList.add('.submit');
+  submitBtn.classList.remove('#submit-button');
+
 
 
   // Add your logic for ending the quiz and displaying the score input form here
