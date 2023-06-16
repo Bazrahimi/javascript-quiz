@@ -81,7 +81,9 @@
     // Go back previous page
     backBtn.addEventListener('click', function() {
       window.history.back();
-      location.reload();
+      
+      //refresh the page, so we dont see the submit button
+      window.location.href = window.location.href
     });
 
     // Clear LocalStorage + Li
