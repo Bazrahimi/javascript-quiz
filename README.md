@@ -27,6 +27,8 @@ Visit the [deployed webpage](https://bazrahimi.github.io/javascript-quiz/) to se
 *Description: indicating that quiz is completed, previous highest score, current score,input box for the users to insert and initials, remainting timen and a submit button *
 ![Screenshot of the webpage](./assets/images/3.png)
 *Description: indicating the Highest score to date, other previous scores, Go back to home page, and clear score optionality.*
+![Screenshot of the webpage](./assets/images/3.png)
+*Description: indicating the Highest score to date, other previous scores, Go back to home page, and clear score optionality.*
 
 
 ## Credits
