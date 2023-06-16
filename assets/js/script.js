@@ -177,9 +177,10 @@ window.addEventListener('load', function() {
  scoresArray.sort((a, b) => b.score - a.score);
  if (scoresArray.length > 0) {
   const highestScore = scoresArray[0].score;
-  highScoreEl.textContent = ` Highest Score: ${highestScore}%`;
+  highScoreEl.innerHTML = `Highest Score: <a href="./assets/html/scores.html">${highestScore}%</a>`;
  } else { 
-  highScoreEl.textContent = 'No High Scores'
+  highScoreEl.textContent = 'No High Scores';
+  
 
  }
 
