@@ -165,7 +165,7 @@ function endQuiz() {
     } else {
       saveScore();
 
-      window.location.href = '../../assets/scores.html';
+      window.location.href = '/scores.html';
    
     }
   });
