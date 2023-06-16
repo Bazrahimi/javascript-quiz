@@ -21,7 +21,7 @@ Feel free to use this code as a starter for your own webpage. You can customize 
 Visit the [deployed webpage](https://bazrahimi.github.io/javascript-quiz/) to see the live version.
 
 ![Screenshot of the webpage](./assets/images/1.png)
-*Description: indicating that the user has done the quiz before with no high scores, start button for quiz and time limit of 40s *
+*Description: indicating that the user has not done the quiz before with no high scores, start button for quiz and time limit of 40s *
 
 ![Screenshot of the webpage](./assets/images/2.png)
 *Description: showing question, multiple choices, answer feedback and time running *
