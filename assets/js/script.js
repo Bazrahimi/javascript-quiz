@@ -165,8 +165,8 @@ function endQuiz() {
     } else {
       saveScore();
 
-      // Redirect to the separate Score-page.
-      window.location.href = '../assets/scores.html';
+      window.location.href = '../../assets/scores.html';
+   
     }
   });
 }
