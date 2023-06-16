@@ -21,8 +21,12 @@ Feel free to use this code as a starter for your own webpage. You can customize 
 Visit the [deployed webpage](https://bazrahimi.github.io/javascript-quiz/) to see the live version.
 
 ![Screenshot of the webpage](./assets/images/1.png)
+*Description: An example of a quiz question with multiple choices and a time, highest past score and correct feedback specific question*
+
 ![Screenshot of the webpage](./assets/images/2.png)
+*Description: indicating that quiz is completed, previous highest score, current score,input box for the users to insert and initials, remainting timen and a submit button *
 ![Screenshot of the webpage](./assets/images/3.png)
+*Description: indicating the Highest score to date, other previous scores, Go back to home page, and clear score optionality.*
 
 
 ## Credits
