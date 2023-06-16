@@ -132,7 +132,7 @@ function saveScore() {
 
 function endQuiz() {
   clearInterval(timeInterval);
-  timerEl.textContent = 'Time: ' + time;
+  timerEl.textContent = 'Remained Time: ' + time;
 
   // Hide start button, question, multiple choice, and feedback elements
   startBtn.style.display = 'none';
@@ -151,7 +151,7 @@ function endQuiz() {
   p1.style.fontSize = '25px';
 
   const p2 = document.createElement('p');
-  p2.textContent = `Your final score is ${scores}%.`;
+  p2.textContent = `Your current score is ${scores}%.`;
   p2.style.marginTop = '10px';
   p2.style.marginBottom = '10px';
 
