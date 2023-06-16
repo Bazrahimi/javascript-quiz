@@ -27,6 +27,7 @@
     }
     
     button {
+      cursor: pointer;
       background-color: green;
       color: white;
       font-size: 20px;
@@ -35,33 +36,57 @@
       margin: 20px;
       margin-left: 0px;
       padding: 10px;
-    
+    }
+
+    .back:hover,
+    .clear:hover {
+      color: red;
     }
     
   </style>
 </head>
 <body>
-  <h1>Scores</h1>
-  <h3>score are sorted from highest </h3>
+  <h1></h1>
+  <h3>Other attempts:</h3>
   <ol id="score-list"></ol>
-  <button><a href="../index.html">Go back</a></button>
-  <button>Clear Scores</button>
+  <button class="back">Go Back</button>
+  <button class="clear">Clear Scores</button>
 
   <script>
-    window.addEventListener('load', function() {
+    //DOM Elements
+    const backBtn = document.querySelector('.back');
+    const clearBtn = document.querySelector('.clear');
+    const highScoreEl = document.querySelector('h1');
+    const scoresListEl = document.querySelector('#score-list');
+
+    // show scores when the page is loaded
+    window.addEventListener('load', function(){
       let scoresArray = JSON.parse(localStorage.getItem('scores')) || [];
-      // Sort the scores
       scoresArray.sort((a, b) => b.score - a.score);
+      if (scoresArray.length > 0) {
+        const highestScore = scoresArray[0].score;
+        highScoreEl.textContent = `Highest Score: ${highestScore}%`;
 
-      const scoreList = document.getElementById('score-list');
-      // Display scores in the scoreList
-      scoresArray.forEach(scoreData => {
-        const scoreItem = document.createElement('li');
-        scoreItem.textContent = `${scoreData.initials}: ${scoreData.score}%`;
-        scoreList.appendChild(scoreItem);
-      });
+        // Create li elements for each score and append to scoresListEl
+        scoresArray.forEach(user => {
+          const li = document.createElement('li');
+          li.textContent = `${user.initials}: ${user.score}%`;
+          scoresListEl.appendChild(li);
+        });
+      } else { 
+        highScoreEl.textContent = 'No Score!';
+      }
+    });
 
-      
+    // Go back previous page
+    backBtn.addEventListener('click', function() {
+      window.history.back();
+    });
+
+    // Clear LocalStorage + Li
+    clearBtn.addEventListener('click', function () {
+      localStorage.clear();
+      scoresListEl.innerHTML = '';
     });
   </script>
 </body>
