@@ -5,8 +5,8 @@ const questionEl = document.getElementById('question');
 const choicesEl = document.getElementById('choices');
 const feedbackEl = document.getElementById('feedback');
 const initialsInput = document.getElementById('initials');
-const scoreEl = document.getElementById('scores');
 const submitBtn = document.getElementById('submit-button');
+const highScoreEl = document.getElementById('highscore');
 
 // Quiz Variables
 let currentQuestionIndex = 0;
@@ -55,7 +55,7 @@ startBtn.addEventListener('click', function startQuiz() {
   showQuestion();
 });
 
-// Function to start Timer
+
 function startTimer() {
   timeInterval = setInterval(function() {
     time--;
@@ -114,11 +114,6 @@ function handleChoice(event) {
     // Proceed to the next question
     showQuestion();
   }
-
-  // Hide initials input if it has a value
-  if (initialsInput.value !== '') {
-    initialsInput.style.display = 'none';
-  }
 }
 
 // Function to save scores and initials
@@ -169,9 +164,24 @@ function endQuiz() {
       alert('Please enter your initials.');
     } else {
       saveScore();
-      // Redirect to a new scores page
+
+      // Redirect to the separate Score-page.
       window.location.href = '../assets/scores.html';
     }
   });
 }
+
+//display the highest scores when the page loads.
+window.addEventListener('load', function() {
+ let scoresArray =  JSON.parse(localStorage.getItem('scores')) || [];
+ scoresArray.sort((a, b) => b.score - a.score);
+ if (scoresArray.length > 0) {
+  const highestScore = scoresArray[0].score;
+  highScoreEl.textContent = ` Highest Score: ${highestScore}%`;
+ } else { 
+  highScoreEl.textContent = 'No High Scores'
+
+ }
+
+});
 
