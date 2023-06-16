@@ -21,17 +21,18 @@ Feel free to use this code as a starter for your own webpage. You can customize 
 Visit the [deployed webpage](https://bazrahimi.github.io/javascript-quiz/) to see the live version.
 
 ![Screenshot of the webpage](./assets/images/1.png)
-*Description: An example of a quiz question with multiple choices and a time, highest past score and correct feedback specific question*
+*Description: indicating that the user has done the quiz before with no high scores, start button for quiz and time limit of 40s *
 
 ![Screenshot of the webpage](./assets/images/2.png)
-*Description: indicating that quiz is completed, previous highest score, current score,input box for the users to insert and initials, remainting timen and a submit button *
+*Description: showing question, multiple choices, answer feedback and time running *
 ![Screenshot of the webpage](./assets/images/3.png)
-*Description: indicating the Highest score to date, other previous scores, Go back to home page, and clear score optionality.*
-![Screenshot of the webpage](./assets/images/3.png)
-*Description: indicating the Highest score to date, other previous scores, Go back to home page, and clear score optionality.*
+*Description: indicating the quiz is completed,  previous Highest of 60%, current score of 80%, input to enter initial, remained time before completion 14seconds and a submit button*
+![Screenshot of the webpage](./assets/images/4.png)
+*Description: indicating the Highest score to date, and all the other scores and optionality to go back homepage and clear the scores .*
 
 
 ## Credits
+- Developed by [Baz Rahimi](https://github.com/bazrahimi).
 - Zoom Recording: [https://applications.zoom.us/lti/rich/home/recording/detail](https://applications.zoom.us/lti/rich/home/recording/detail)
 
 ## License
